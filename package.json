@@ -1,0 +1,25 @@
+{
+  "name": "inuit-fluid-font-size",
+  "version": "0.1.0",
+  "description": "Fluid font-size mixin for inuitcss",
+  "main": "tools/tools.fluid-font-size.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarianoMiguel/inuit-fluid-font-size.git"
+  },
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "sass",
+    "css"
+  ],
+  "author": "Mariano Miguel",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MarianoMiguel/inuit-fluid-font-size/issues"
+  },
+  "homepage": "https://github.com/MarianoMiguel/inuit-fluid-font-size#readme"
+}

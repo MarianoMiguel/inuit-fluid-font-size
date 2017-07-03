@@ -1,0 +1,16 @@
+{
+  "name": "inuit-fluid-font-size",
+  "description": "Fluid font-size mixin for inuitcss",
+  "main": "tools/tools.fluid-font-size.scss",
+  "authors": [
+    "Mariano Miguel"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "sass",
+    "css"
+  ],
+  "homepage": ""
+}
