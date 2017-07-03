@@ -35,7 +35,7 @@ The idea is to make fluid typography as simple and intuitive as possible: just
 provide your desired font-size in pixels, and the mixin will make the calculations
 to ensure the element's font-size matches that exactly at the breakpoint you
 provide (The default breakpoint is `1200px`, but you can override the
-`$inuit-fluid-font-size-breakpoint`) variable.
+`$inuit-fluid-font-size-breakpoint`variable).
 
 There are no min or max boundaries. What we have instead, is a numeric variable
 called `$inuit-fluid-font-size-scale-rate` (default value is `0.85`), which
