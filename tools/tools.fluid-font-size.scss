@@ -5,13 +5,14 @@
 // Set the viewport width at which font sizes will exactly match the provided
 // pixel value. Our fluid typography calc() function will scale the font-size
 // up or down based on viewport size and the $inuit-fluid-font-size-scale-rate.
-
 $inuit-fluid-font-size-breakpoint: 1200px !default;
 
 // Set the rate at which font sizes scale both up and down depending on
 // viewport size.
-
 $inuit-fluid-font-size-scale-rate: 0.85 !default;
+
+// Enable or disable max boundaries
+$inuit-fluid-font-size-max-boundaries: false !default;
 
 @mixin inuit-fluid-font-size($font-size, $line-height: auto, $important: false) {
 
@@ -31,24 +32,27 @@ $inuit-fluid-font-size-scale-rate: 0.85 !default;
     @error "`#{$important}` needs to be `true` or `false`."
   }
 
-  // We provide a `px` fallback for old IEs.
-  font-size: $font-size $important;
-  font-size: calc(#{$inuit-fluid-font-size-scale-rate * 1rem} + #{(($font-size - ($inuit-fluid-font-size-scale-rate * $inuit-global-font-size)) / $inuit-fluid-font-size-breakpoint) * 100vw}) $important;
+  // We provide a rem fallback for old browsers.
+  font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
+  font-size: calc(#{$inuit-fluid-font-size-scale-rate * 1rem} + #{(($font-size -
+             ($inuit-fluid-font-size-scale-rate * $inuit-global-font-size)) /
+             $inuit-fluid-font-size-breakpoint) * 100vw}) $important;
 
   @if ($line-height == 'auto') {
-    line-height: ceil($font-size / $inuit-global-line-height) * ($inuit-global-line-height / $font-size) $important;
-  }
-
-  @else {
-
-    @if (type-of($line-height) == number or $line-height == 'inherit' or $line-height == 'normal') {
+    line-height: ceil($font-size / $inuit-global-line-height) *
+                 ($inuit-global-line-height / $font-size) $important;
+  } @else {
+    @if (type-of($line-height) == number or $line-height == 'inherit' or
+    $line-height == 'normal') {
       line-height: $line-height $important;
-    }
-
-    @elseif ($line-height != 'none' and $line-height != false) {
+    } @elseif ($line-height != 'none' and $line-height != false) {
       @error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
     }
-
   }
 
+  @if ($inuit-fluid-font-size-max-boundaries == true) {
+    @media screen and (min-width: $global-typography-breakpoint) {
+      font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
+    }
+  }
 }
