@@ -32,7 +32,7 @@ file:
 ## How it works
 
 The idea is to make fluid typography as simple and intuitive as possible: just
-provide your desired font-size in pixels or rems, and the mixin will make the calculations
+provide your desired font-size in pixels, and the mixin will make the calculations
 to ensure the element's font-size matches that exactly at the breakpoint you
 provide (The default breakpoint is `1200px`, but you can override the
 `$inuit-fluid-font-size-breakpoint` variable).
